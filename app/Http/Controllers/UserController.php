@@ -11,7 +11,9 @@ class UserController extends Controller
         $user = $request->user()->load('details');
 
         return response()->json([
-            'user' => [
+            'status' => 'success',
+            'message' => 'Profile retrieved successfully',
+            'data' => [
                 'id' => $user->id,
                 'name' => $user->name,
                 'email' => $user->email,
